@@ -26,7 +26,7 @@ public class ReportProcessor implements Callable<Boolean> {
 	
 	@Override
 	public Boolean call() throws Exception {
-		
+		System.out.println("URL checker thread name: "+Thread.currentThread().getName());
 		Boolean reportGenerated  = false;
 		List<BankAccountTransaction> transactions = dao.getTransactionsForAccount(account);
 		File file = new File("E:/ApplicationDev/JavaEE/output/"+account.getAccountNumber()+"_txn_report.txt");
